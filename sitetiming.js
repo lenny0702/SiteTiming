@@ -35,16 +35,18 @@ function init () {
 		},1000)
 }
 function after() {
-	if('undefined' == typeof Highcharts){
-		add_script("http://code.highcharts.com/highcharts.js",after1);
-	}else{
-		after2();	
-	}
+	$LAB
+	    .script("http://codeorigin.jquery.com/jquery-1.7.2.min.js").wait()
+	    .script("http://code.highcharts.com/highcharts.js").wait()
+	    .script("http://code.highcharts.com/modules/exporting.js")
+	    .wait(initPieChart);
+	//if('undefined' == typeof Highcharts){
+		//add_script("http://code.highcharts.com/highcharts.js",after1);
+	//}else{
+		//after2();	
+	//}
 }
-function after1 () {
-	add_script("http://code.highcharts.com/modules/exporting.js",after2);
-}
-function after2 () {
+function initPieChart() {
         $('#NavagationTimingClose a').click(function(){
 		$('#TimingAnalytics').remove();
 	})
@@ -174,5 +176,5 @@ console.log("dom加载时间：" + time[5] + "ms");
 console.log("event加载时间：" + time[6] + "ms");
 console.log("-------------------------------------------------------");
 init();
-add_script("http://codeorigin.jquery.com/jquery-1.7.2.min.js",after);
+add_script("https://raw.github.com/getify/LABjs/master/LAB.min.js",after);
 displayTab ();
