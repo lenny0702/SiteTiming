@@ -174,5 +174,5 @@ console.log("dom加载时间：" + time[5] + "ms");
 console.log("event加载时间：" + time[6] + "ms");
 console.log("-------------------------------------------------------");
 init();
-add_script("http://localhost/js/jquery-1.7.2.min.js",after);
+add_script("http://codeorigin.jquery.com/jquery-1.7.2.min.js",after);
 displayTab ();
